@@ -1,5 +1,6 @@
 """
-Naive baseline implementation used to illustrate the performance limitations of per-request model infernce. Request are processed independently without batching or coordination,resulting in poor throughput and rising tail latency  under concurrent load.
+Naive baseline implementation used to illustrate the performance limitations of per-request model infernce. 
+Request are processed independently without batching or coordination,resulting in poor throughput and rising tail latency  under concurrent load.
 """
 
 import time
@@ -45,7 +46,9 @@ def predict(request: SentimentRequest):
     3. Model Inference (Matrix bound)
     4. Return
 
-    Flaw: This endpoint is intentionally synchronous. While FastAPI executes `def` endpoints in a threadpool, concurrent request still contend for CPU resources during tokenization and scheduling, and batching opportunities are lost. This results in poor throughput and raising tail latency under load.
+    Flaw: This endpoint is intentionally synchronous. While FastAPI executes `def` endpoints in a threadpool, 
+    concurrent request still contend for CPU resources during tokenization and scheduling, and batching opportunities are lost. 
+    This results in poor throughput and raising tail latency under load.
     """
     start_time = time.time()
 
