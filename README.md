@@ -86,9 +86,9 @@ At a low load, the system remains functional but is already showing signs reques
     - **Max Latency:** ~3600 ms
     - **Status:** Functional, but significantly slower than a typical IO-bound web service.
 
-    [10 Users Chart](./benchmarks/baseline_screenshots/10_users_chart.png)
-    [Server locust metrics](./benchmarks/baseline_screenshots/baseline_10_users_naive_server_locust_metrics.png)
-    [Request and Response Statistics](./benchmarks/baseline_screenshots/10_users_naive_server_locust_request_response_stats.png)
+![10 Users Chart](./benchmarks/baseline_screenshots/10_users_chart.png)
+![Server locust metrics](./benchmarks/baseline_screenshots/baseline_10_users_naive_server_locust_metrics.png)
+![Request and Response Statistics](./benchmarks/baseline_screenshots/10_users_naive_server_locust_request_response_stats.png)
 
 
 ### 2. Saturation (50 Concurrent Users)
@@ -98,9 +98,9 @@ At 50 concurrent users, the system reaches its **throughput ceiling**. The CPU i
     - **Max Latency:** ~6200 ms
     - **Status:** Saturated. Request begins to queue aggressively, resulting in noticeable and increasing user-facing latency.
 
-    [50 Users Chart](./benchmarks/baseline_screenshots/50_users_chart.png)
-    [Server locust metrics](./benchmarks/baseline_screenshots/baseline_50_users_naive_server_locust_metrics.png)
-    [Request and Response Statistics](./benchmarks/baseline_screenshots/50_users_naive_server_locust_request_response_stats.png)
+![50 Users Chart](./benchmarks/baseline_screenshots/50_users_chart.png)
+![Server locust metrics](./benchmarks/baseline_screenshots/baseline_50_users_naive_server_locust_metrics.png)
+![Request and Response Statistics](./benchmarks/baseline_screenshots/50_users_naive_server_locust_request_response_stats.png)
 
 ### 3. Latency Collapse (100 Concurrent Users)
 At 100 concurrent users, the system  remains throughput-bound but experiences a severe **latency collapse**. The server continues processing at its maximum sustainable rate, but excessive queueing causes the reponse time to grow dramatically.
@@ -109,11 +109,12 @@ At 100 concurrent users, the system  remains throughput-bound but experiences a 
     - **Max Latency:** ~11,000 ms (11 s)
     - **Status:** Functionally alive, but practically unusable due to extreme tail latency.
 
-    [50 Users Chart](./benchmarks/baseline_screenshots/100_users_chart.png)
-    [Server locust metrics](./benchmarks/baseline_screenshots/baseline_100_users_naive_server_locust_metrics.png)
-    [Request and Response Statistics](./benchmarks/baseline_screenshots/100_users_naive_server_locust_request_response_stats.png)
+![100 Users Chart](./benchmarks/baseline_screenshots/100_users_chart.png)
+![Server locust metrics](./benchmarks/baseline_screenshots/baseline_100_users_naive_server_locust_metrics.png)
+![Request and Response Statistics](./benchmarks/baseline_screenshots/100_users_naive_server_locust_request_response_stats.png)
 
-*Screenshots are provided in benchmarks/baseline_screenshots/ for reference*
+*Screenshots are provided in ```benchmarks/baseline_screenshots/``` for reference*
+*For detailed results and metrics, see the full HTML report in ```benchmarks/report```*
 
 ## Naive Implementation Bottleneck
 - Sequential Processing: Each HTTP request triggers a full model inference handled one at a time.
